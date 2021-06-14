@@ -24,4 +24,4 @@ if __name__ == '__main__':
 
 Now modify print_tree method to take tree level as input. And that should print tree only upto that level as shown below,
 
-![](location-trees-all.png)
+![](locations.png)

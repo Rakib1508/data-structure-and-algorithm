@@ -2,11 +2,12 @@
 
 1. Below is the management hierarchy of a company.
 
-   ![ss](names-ranks.png)
+   ![ss](management-tree.png)
 
 Copy [tree class](https://github.com/Rakib/data-structure-and-algorithm/blob/master/data-structures/tree/tree.py) from `tree.py` script so that it takes **name** and **designation** in data part of TreeNode class.
 Now extend print_tree function such that it can print either name tree, designation tree or name and designation tree. As shown below,
 
+![](names-ranks.png)
 ![](names.png)
 ![](ranks.png)
 
@@ -24,4 +25,4 @@ if __name__ == '__main__':
 
 Now modify print_tree method to take tree level as input. And that should print tree only upto that level as shown below,
 
-![](locations.png)
+![](location-trees-all.png)

@@ -33,6 +33,27 @@ class BST:
             else:
                 return False
 
+    def delete(self, value):
+        if value < self.data:
+            if self.left:
+                self.left = self.left.delete(value)
+        elif value > self.data:
+            if self.right:
+                self.right = self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.left
+
+            min_node = self.right.find_min()
+            self.data = min_node
+            self.right = self.right.delete(min_node)
+
+        return self
+
     def inorder_traversal(self):
         nodes = []
         if self.left:
@@ -92,3 +113,21 @@ if __name__ == '__main__':
     print("In order traversal:", numbers_tree.inorder_traversal())
     print("Pre order traversal:", numbers_tree.preorder_traversal())
     print("Post order traversal:", numbers_tree.postorder_traversal())
+
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    print('Tree is built as:', numbers_tree.inorder_traversal())
+    numbers_tree.delete(20)
+    # this should print [1, 4, 9, 17, 18, 23, 34]
+    print("After deleting 20 ", numbers_tree.inorder_traversal())
+
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    print('Tree is built as:', numbers_tree.inorder_traversal())
+    numbers_tree.delete(9)
+    # this should print [1, 4, 17, 18, 20, 23, 34]
+    print("After deleting 9 ", numbers_tree.inorder_traversal())
+
+    numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+    print('Tree is built as:', numbers_tree.inorder_traversal())
+    numbers_tree.delete(17)
+    # this should print [1, 4, 9, 18, 20, 23, 34]
+    print("After deleting 17 ", numbers_tree.inorder_traversal())

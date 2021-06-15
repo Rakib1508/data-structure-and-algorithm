@@ -1,0 +1,9 @@
+# Binary Tree
+
+Here are the list of methods implemented in this module for Binary Search Tree or BST
+
+    1. find_min(): finds minimum element in entire binary tree
+    2. find_max(): finds maximum element in entire binary tree
+    3. calculate_sum(): calcualtes sum of all elements
+    4. post_order_traversal(): performs post order traversal of a binary tree
+    5. pre_order_traversal(): perofrms pre order traversal of a binary tree
